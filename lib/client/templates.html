@@ -1,0 +1,72 @@
+<template name="membershipButton">
+    {{#if loggedIn}}
+        {{#if userIsItemOwner _id collection}}
+        {{else}}
+            {{#if membershipIsRequested _id}}
+                {{> buttonPending collection=collection _id=_id}}
+            {{else}}
+                {{#if membershipsByDoc _id}}
+                {{else}}
+                    {{> buttonLink collection=collection _id=_id}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</template>
+
+<template name="buttonPending">
+    <button docType="{{collection}}" doc="{{_id}}" class="btn btn-default btn-sm btn-pending-membership">
+        <i class="fa fa-user">
+        </i> Request pending...
+        (<i class="fa fa-remove"></i><a docType="{{collection}}" doc="{{_id}}" class="btn-cancel-membership">
+        <span class="text-muted">Resign</span></a>)
+    </button>
+</template>
+
+<template name="buttonLink">
+    <button docType="{{collection}}" doc="{{_id}}" class="btn btn-primary btn-sm btn-membership">
+        <i class="fa fa-user"></i> Join
+    </button>
+</template>
+
+<template name="memberships">
+    <div class="memberships">
+        {{#if membershipsByDoc _id}}
+            <hr/>
+            {{#each membershipsByDoc _id}}
+                {{> membership}}
+            {{/each}}
+        {{else}}
+            {{> noMemberships}}
+        {{/if}}
+    </div>
+</template>
+
+<template name="membership">
+    <div class="media membership">
+        <a class="pull-left" href="#">
+            {{> profileThumb _id=owner}}
+        </a>
+    </div>
+</template>
+
+<template name="hasMemberships">
+    {{#each memberships}}
+        <div style="padding:20px">
+            <div class="tip left">
+                {{content}}
+            </div>
+        </div>
+    {{/each}}
+</template>
+
+<template name="noMemberships">
+</template>
+
+<template name="acceptMembership">
+    {{#if isAccepted _id }}
+        <h3>membership request is accepted</h3>
+    {{else}}
+        <h3>membership request could not be accepted</h3>
+    {{/if}}
+</template>
