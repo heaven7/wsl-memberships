@@ -7,7 +7,7 @@
             {{else}}
                 {{#if membershipsByDoc _id}}
                 {{else}}
-                    {{> buttonLink collection=collection _id=_id}}
+                    {{> buttonLink collection=collection _id=_id buttontext=buttontext }}
                 {{/if}}
             {{/if}}
         {{/if}}
@@ -25,7 +25,7 @@
 
 <template name="buttonLink">
     <button docType="{{collection}}" doc="{{_id}}" class="btn btn-primary btn-sm btn-membership">
-        <i class="fa fa-user"></i> Join
+        <i class="fa fa-user"></i> {{buttontext}}
     </button>
 </template>
 
