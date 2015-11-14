@@ -71,13 +71,12 @@
     {{/if}}
 </template>
 
-<template name="inviteMembersModal">
-    <div class="ui modal" id="inviteMembersModal">
-        <i class="close icon"></i>
-        <div class="header">Invite members to project</div>
-        <div class="content">
-            here comes the form to invite the members (comma sep. email list);
-            and after the names to enter...
-        </div>
-    </div>
+<template name="inviteMembersForm">
+    {{#autoForm collection="Memberships" meteormethod="newMembership" type="insert" id="inviteMembersForm"}}
+        {{> afQuickField name='emails'}}
+        {{> afQuickField name='doc' value=doc type='hidden'}}
+        {{> afQuickField name='docType' value=docType type='hidden'}}
+        <button id="submitMembersForm" type="submit">Invite</button>
+        <button id="cancelMembersForm">Cancel</button>
+    {{/autoForm}}
 </template>
