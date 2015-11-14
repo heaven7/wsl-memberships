@@ -72,7 +72,7 @@
 </template>
 
 <template name="inviteMembersForm">
-    {{#autoForm collection="Memberships" meteormethod="newMembership" type="insert" id="inviteMembersForm"}}
+    {{#autoForm schema=inviteMembersSchema meteormethod="inviteMembers" type="method" id="inviteMembersForm"}}
         {{> afQuickField name='emails'}}
         {{> afQuickField name='doc' value=doc type='hidden'}}
         {{> afQuickField name='docType' value=docType type='hidden'}}
