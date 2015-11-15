@@ -68,6 +68,10 @@
         <h3>membership request is accepted</h3>
     {{else}}
         <h3>membership request could not be accepted</h3>
+        {{#if userIsItemOwner _id docType}}
+        {{else}}
+            <p>you are not allowed to accept this request</p>
+        {{/if}}
     {{/if}}
 </template>
 
