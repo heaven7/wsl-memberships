@@ -23,6 +23,7 @@ Package.onUse(function(api) {
     ], both);
 
     api.addFiles([
+        'lib/server/email/templates/send-invite.handlebars',
         'lib/server/allow.js',
         'lib/server/methods.js',
         'lib/server/publish.js',
