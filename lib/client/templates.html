@@ -17,9 +17,9 @@
 <template name="buttonPending">
     <button docType="{{collection}}" doc="{{_id}}" class="btn btn-default btn-sm btn-pending-membership">
         <i class="fa fa-user">
-        </i> Request pending...
+        </i> {{_ "request_pending"}}
         (<i class="fa fa-remove"></i><a docType="{{collection}}" doc="{{_id}}" class="btn-cancel-membership">
-        <span class="text-muted">Resign</span></a>)
+        <span class="text-muted">{{_ "cancel"}}</span></a>)
     </button>
 </template>
 
@@ -65,12 +65,12 @@
 
 <template name="acceptMembership">
     {{#if isAccepted _id }}
-        <h3>membership request is accepted</h3>
+        <h3>{{_ "membership_accepted"}}</h3>
     {{else}}
-        <h3>membership request could not be accepted</h3>
+        <h3>{{_ "membership_not_accepted"}}</h3>
         {{#if userIsItemOwner _id docType}}
         {{else}}
-            <p>you are not allowed to accept this request</p>
+            <p>{{_ "membership_not_allowed_to_accept"}}</p>
         {{/if}}
     {{/if}}
 </template>
@@ -80,8 +80,8 @@
         {{> afQuickField name='emails'}}
         {{> afQuickField name='doc' value=doc type='hidden'}}
         {{> afQuickField name='docType' value=docType type='hidden'}}
-        <button id="submitMembersForm" type="submit">Invite</button>
-        <button id="cancelMembersForm">Cancel</button>
+        <button id="submitMembersForm" type="submit">{{_ "invite"}}</button>
+        <button id="cancelMembersForm">{{_ "cancel"}}</button>
     {{/autoForm}}
 </template>
 
