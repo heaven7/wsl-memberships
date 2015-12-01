@@ -64,11 +64,16 @@
 </template>
 
 <template name="acceptMembership">
-    {{#if isAccepted _id }}
-        <h3>{{_ "membership_accepted"}}</h3>
+    {{#if isAccepted doc }}
+        {{# if invited}}
+            <h3>{{_ "membership_accepted"}}</h3>
+        {{else}}
+            <h3>{{_ "invitation_accepted"}}</h3>
+        {{/if}}
+            <p><a href="{{ressourceLink}}">Link to {{ressource.title}}</a></p>
     {{else}}
         <h3>{{_ "membership_not_accepted"}}</h3>
-        {{#if userIsItemOwner _id docType}}
+        {{#if userIsItemOwner doc docType}}
         {{else}}
             <p>{{_ "membership_not_allowed_to_accept"}}</p>
         {{/if}}
