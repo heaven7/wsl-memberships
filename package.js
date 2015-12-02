@@ -37,5 +37,8 @@ Package.onUse(function(api) {
         'lib/client/helpers.js'
     ], 'client');
 
-    api.export('Memberships', both);
+    api.export([
+        'Memberships',
+        'membershipsByDoc'
+    ], both);
 });
