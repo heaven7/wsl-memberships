@@ -5,7 +5,7 @@
             {{#if membershipIsRequested _id}}
                 {{> buttonPending collection=collection _id=_id}}
             {{else}}
-                {{#if membershipsByDoc _id}}
+                {{#if currentUserIsMember _id}}
                 {{else}}
                     {{> buttonLink collection=collection _id=_id buttontext=buttontext }}
                 {{/if}}
@@ -66,9 +66,9 @@
 <template name="acceptMembership">
     {{#if isAccepted doc }}
         {{# if invited}}
-            <h3>{{_ "membership_accepted"}}</h3>
-        {{else}}
             <h3>{{_ "invitation_accepted"}}</h3>
+        {{else}}
+            <h3>{{_ "membership_accepted"}}</h3>
         {{/if}}
             <p><a href="{{ressourceLink}}">Link to {{ressource.title}}</a></p>
     {{else}}
