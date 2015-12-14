@@ -3,7 +3,7 @@
         {{#if userIsItemOwner _id collection}}
         {{else}}
             {{#if membershipIsRequested _id}}
-                {{> buttonPending collection=collection _id=_id}}
+                {{> membershipPending collection=collection _id=_id}}
             {{else}}
                 {{#if currentUserIsMember _id}}
                 {{else}}
@@ -14,19 +14,13 @@
     {{/if}}
 </template>
 
-<template name="buttonPending">
-    <button docType="{{collection}}" doc="{{_id}}" class="btn btn-default btn-sm btn-pending-membership">
-        <i class="fa fa-user">
-        </i> {{_ "request_pending"}}
-        (<i class="fa fa-remove"></i><a docType="{{collection}}" doc="{{_id}}" class="btn-cancel-membership">
-        <span class="text-muted">{{_ "cancel"}}</span></a>)
-    </button>
+<template name="membershipPending">
+    {{> icon icon="user" class="disabled"}} {{_ "request_pending"}}
+    {{> button_with_icon class="tiny cancel-membership" icon="remove circle" text=cancel}}
 </template>
 
 <template name="buttonLink">
-    <button docType="{{collection}}" doc="{{_id}}" class="btn btn-primary btn-sm btn-membership">
-        <i class="fa fa-user"></i> {{buttontext}}
-    </button>
+    {{> button_with_icon class="membership orange" text=buttontext icon="user"}}
 </template>
 
 <template name="memberships">
