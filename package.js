@@ -8,7 +8,8 @@ Package.describe({
 
 both = ['client','server'];
 packages = [
-    'heaven7:wsl-core@0.0.2'
+    'heaven7:wsl-core@0.0.2',
+    'heaven7:wsl-i18n@0.0.2'
 ];
 
 Package.onUse(function(api) {
@@ -23,7 +24,7 @@ Package.onUse(function(api) {
     ], both);
 
     api.addFiles([
-        'lib/server/email/templates/send-invite.handlebars',
+        'lib/server/email/templates/send-request.handlebars',
         'lib/server/allow.js',
         'lib/server/methods.js',
         'lib/server/publish.js',
