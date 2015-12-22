@@ -1,6 +1,6 @@
 Package.describe({
   name: 'heaven7:wsl-memberships',
-  version: '0.0.1',
+  version: '0.0.3',
   summary: 'Memberships package',
   git: 'https://github.com/heaven7/wsl-memberships.git',
   documentation: 'README.md'
@@ -8,8 +8,8 @@ Package.describe({
 
 var both = ['client','server'],
     packages = [
-    'heaven7:wsl-core@0.0.2',
-    'heaven7:wsl-i18n@0.0.2'
+    'heaven7:wsl-core@0.0.3',
+    'heaven7:wsl-i18n@0.0.3'
 ];
 
 Package.onUse(function(api) {
