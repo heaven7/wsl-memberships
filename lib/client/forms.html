@@ -1,0 +1,18 @@
+<template name="inviteMembersWithRolesForm">
+    {{#autoForm schema=inviteMembersWithRolesSchema meteormethod="inviteMembersByEmail" type="method" id="inviteMembersForm"}}
+        {{> membershipsFormBody}}
+    {{/autoForm}}
+</template>
+
+<template name="inviteMembersForm">
+    {{#autoForm schema=inviteMembersSchema meteormethod="inviteMembersByEmail" type="method" id="inviteMembersForm"}}
+        {{> membershipsFormBody}}
+    {{/autoForm}}
+</template>
+
+<template name="membershipsFormBody">
+    {{> afQuickField name='emails'}}
+    {{> afQuickField name='doc' value=doc type='hidden'}}
+    {{> afQuickField name='docType' value=docType type='hidden'}}
+    {{> formCustomActions id="submitUpdate" textSubmit=invite textCancel=cancel}}
+</template>

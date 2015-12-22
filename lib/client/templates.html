@@ -15,7 +15,7 @@
 </template>
 
 <template name="membershipPending">
-    {{> icon icon="user" class="disabled"}} {{_ "request_pending"}}
+    {{> icon icon="user" class="disabled"}} {{_ "request_pending"}}<br>
     {{> button_with_icon class="tiny cancel-membership" icon="remove circle" text=cancel}}
 </template>
 
@@ -72,18 +72,4 @@
             <p>{{_ "membership_not_allowed_to_accept"}}</p>
         {{/if}}
     {{/if}}
-</template>
-
-<template name="inviteMembersForm">
-    {{#autoForm schema=inviteMembersSchema meteormethod="inviteMembersByEmail" type="method" id="inviteMembersForm"}}
-        {{> afQuickField name='emails'}}
-        {{> afQuickField name='doc' value=doc type='hidden'}}
-        {{> afQuickField name='docType' value=docType type='hidden'}}
-        <button id="submitMembersForm" type="submit">{{_ "invite"}}</button>
-        <button id="cancelMembersForm">{{_ "cancel"}}</button>
-    {{/autoForm}}
-</template>
-
-<template name="inviteMembersPreview">
-    [inviteMembersPreview]
 </template>

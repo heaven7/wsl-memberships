@@ -6,15 +6,15 @@ Package.describe({
   documentation: 'README.md'
 });
 
-both = ['client','server'];
-packages = [
+var both = ['client','server'],
+    packages = [
     'heaven7:wsl-core@0.0.2',
     'heaven7:wsl-i18n@0.0.2'
 ];
 
 Package.onUse(function(api) {
+    api.versionsFrom('1.2');
     api.use(packages, both);
-
     api.imply(packages);
 
     api.addFiles([
@@ -32,6 +32,8 @@ Package.onUse(function(api) {
     ], 'server');
 
     api.addFiles([
+        'lib/client/forms.html',
+        'lib/client/forms.js',
         'lib/client/hooks.js',
         'lib/client/templates.html',
         'lib/client/templates.js',
