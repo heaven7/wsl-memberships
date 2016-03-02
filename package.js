@@ -1,6 +1,6 @@
 Package.describe({
   name: 'heaven7:wsl-memberships',
-  version: '0.0.3_1',
+  version: '0.0.3_2',
   summary: 'Memberships package',
   git: 'https://github.com/heaven7/wsl-memberships.git',
   documentation: 'README.md'
