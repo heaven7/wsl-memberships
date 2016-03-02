@@ -9,7 +9,11 @@ Package.describe({
 var both = ['client','server'],
     packages = [
     'heaven7:wsl-core@0.0.3_1',
-    'heaven7:wsl-i18n@0.0.3'
+    'heaven7:wsl-alert@0.0.2',
+    'heaven7:wsl-email@0.0.1',
+    'heaven7:wsl-translations@0.0.3',
+    'heaven7:wsl-i18n@0.0.3_4',
+    'iron:router'
     ];
 
 Package.onUse(function(api) {

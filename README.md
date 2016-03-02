@@ -1,28 +1,25 @@
 ### Memberships package
 
-This package is meant not to work 'standalone', but as a part of [wsl] (https://github.com/heaven7/wsl).
+> This package is meant not to work 'standalone', but as a part of [wsl] (https://github.com/heaven7/wsl).
 
 A working example can be found [here] (https://github.com/heaven7/wsl-memberships-demo)
 If you want to use it in your project try this (replace 'Projects' with the name of your collection):
 
 ## Installation
-This package depends on some others, so to get it fully function add these packages:
-```
-meteor add heaven7:wsl-memberships
-meteor add heaven7:wsl-theme-semantic-ui
-meteor add heaven7:wsl-alert
-meteor add heaven7:wsl-i18n
-meteor add heaven7:wsl-translations
+```bash
+heaven7:wsl-memberships
+heaven7:wsl-theme-semantic-ui
 ```
 
 ## Prerequisites
 This package depends on the accounts package. Give your users the possibility to login or use
 ```
-meteor add heaven7:wsl-useraccounts
+meteor add accounts-password
+meteor add accounts-ui
 ```
 and use in your template
 ```
-{{> atForm}}
+{{> loginButtons}}
 ```
 Define a collection
 ```
