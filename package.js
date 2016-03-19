@@ -13,7 +13,7 @@ var both = ['client','server'],
     'heaven7:wsl-email@0.0.1',
     'heaven7:wsl-translations@0.0.3',
     'heaven7:wsl-i18n@0.0.3_4',
-    'iron:router'
+    'iron:router@1.0.12'
     ];
 
 Package.onUse(function(api) {
